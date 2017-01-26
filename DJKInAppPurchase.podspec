@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "DJKInAppPurchase"
-  s.version      = "0.0.6"
+  s.version      = "0.0.7"
   s.summary      = "A short description of DJKInAppPurchase."
 
   s.description  = <<-DESC
@@ -104,7 +104,7 @@ Pod::Spec.new do |s|
   #  non-essential files like tests, examples and documentation.
   #
 
-  # s.resource  = "InterfaceBuilder/*.storyboard"
+  s.resource  = "DJKInAppPurchase.framework"
   # s.resources = "Resources/*.png"
 
   # s.preserve_paths = "FilesToSave", "MoreFilesToSave"
@@ -116,7 +116,7 @@ Pod::Spec.new do |s|
   #  the lib prefix of their name.
   #
 
-  s.framework  = "DJKInAppPurchase"
+  # s.framework  = "DJKInAppPurchase"
   # s.frameworks = "SomeFramework", "AnotherFramework"
 
   # s.library   = "iconv"
