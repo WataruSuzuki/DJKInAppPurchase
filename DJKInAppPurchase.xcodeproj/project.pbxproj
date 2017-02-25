@@ -6,6 +6,20 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		60622F6D1E68002C00580F0A /* DJKInAppPurchaseFatBinary */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 60622F701E68002C00580F0A /* Build configuration list for PBXAggregateTarget "DJKInAppPurchaseFatBinary" */;
+			buildPhases = (
+				60622F711E68008300580F0A /* Run Script Fat Binary */,
+			);
+			dependencies = (
+			);
+			name = DJKInAppPurchaseFatBinary;
+			productName = DJKInAppPurchaseFatBinary;
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		60622F401E67F2D300580F0A /* DJKInAppPurchase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60622F361E67F2D300580F0A /* DJKInAppPurchase.framework */; };
 		60622F451E67F2D300580F0A /* DJKInAppPurchaseTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 60622F441E67F2D300580F0A /* DJKInAppPurchaseTests.m */; };
@@ -174,6 +188,10 @@
 						CreatedOnToolsVersion = 8.2.1;
 						ProvisioningStyle = Automatic;
 					};
+					60622F6D1E68002C00580F0A = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+					};
 				};
 			};
 			buildConfigurationList = 60622F301E67F2D300580F0A /* Build configuration list for PBXProject "DJKInAppPurchase" */;
@@ -191,6 +209,7 @@
 			targets = (
 				60622F351E67F2D300580F0A /* DJKInAppPurchase */,
 				60622F3E1E67F2D300580F0A /* DJKInAppPurchaseTests */,
+				60622F6D1E68002C00580F0A /* DJKInAppPurchaseFatBinary */,
 			);
 		};
 /* End PBXProject section */
@@ -213,6 +232,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		60622F711E68008300580F0A /* Run Script Fat Binary */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Run Script Fat Binary";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#!/bin/sh\n\nUNIVERSAL_OUTPUTFOLDER=${BUILD_DIR}/${CONFIGURATION}-universal\n\n# make sure the output directory exists\nmkdir -p \"${UNIVERSAL_OUTPUTFOLDER}\"\n\n# Step 1. Build Device and Simulator versions\nxcodebuild -target \"${PROJECT_NAME}\" ONLY_ACTIVE_ARCH=NO -configuration ${CONFIGURATION} -sdk iphoneos  BUILD_DIR=\"${BUILD_DIR}\" BUILD_ROOT=\"${BUILD_ROOT}\" clean build\nxcodebuild -target \"${PROJECT_NAME}\" -configuration ${CONFIGURATION} -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO BUILD_DIR=\"${BUILD_DIR}\" BUILD_ROOT=\"${BUILD_ROOT}\" clean build\n\n# Step 2. Copy the framework structure (from iphoneos build) to the universal folder\ncp -R \"${BUILD_DIR}/${CONFIGURATION}-iphoneos/${PROJECT_NAME}.framework\" \"${UNIVERSAL_OUTPUTFOLDER}/\"\n\n# Step 3. Copy Swift modules from iphonesimulator build (if it exists) to the copied framework directory\nSIMULATOR_SWIFT_MODULES_DIR=\"${BUILD_DIR}/${CONFIGURATION}-iphonesimulator/${PROJECT_NAME}.framework/Modules/${PROJECT_NAME}.swiftmodule/.\"\nif [ -d \"${SIMULATOR_SWIFT_MODULES_DIR}\" ]; then\ncp -R \"${SIMULATOR_SWIFT_MODULES_DIR}\" \"${UNIVERSAL_OUTPUTFOLDER}/${PROJECT_NAME}.framework/Modules/${PROJECT_NAME}.swiftmodule\"\nfi\n\n# Step 4. Create universal binary file using lipo and place the combined executable in the copied framework directory\nlipo -create -output \"${UNIVERSAL_OUTPUTFOLDER}/${PROJECT_NAME}.framework/${PROJECT_NAME}\" \"${BUILD_DIR}/${CONFIGURATION}-iphonesimulator/${PROJECT_NAME}.framework/${PROJECT_NAME}\" \"${BUILD_DIR}/${CONFIGURATION}-iphoneos/${PROJECT_NAME}.framework/${PROJECT_NAME}\"\n\n# Step 5. Convenience step to copy the framework to the project's directory\ncp -R \"${UNIVERSAL_OUTPUTFOLDER}/${PROJECT_NAME}.framework\" \"${PROJECT_DIR}\"\n\n# Step 6. Convenience step to open the project's directory in Finder\nopen \"${PROJECT_DIR}\"";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		60622F311E67F2D300580F0A /* Sources */ = {
@@ -409,6 +445,20 @@
 			};
 			name = Release;
 		};
+		60622F6E1E68002C00580F0A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		60622F6F1E68002C00580F0A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -438,6 +488,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		60622F701E68002C00580F0A /* Build configuration list for PBXAggregateTarget "DJKInAppPurchaseFatBinary" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				60622F6E1E68002C00580F0A /* Debug */,
+				60622F6F1E68002C00580F0A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
