@@ -15,7 +15,7 @@
 		60622F571E67F4B400580F0A /* DJKInAppPurchaseImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 60622F521E67F4B400580F0A /* DJKInAppPurchaseImpl.m */; };
 		60622F581E67F4B400580F0A /* DJKKeychainManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 60622F531E67F4B400580F0A /* DJKKeychainManager.h */; };
 		60622F591E67F4B400580F0A /* DJKKeychainManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 60622F541E67F4B400580F0A /* DJKKeychainManager.m */; };
-		60622F5B1E67F4D200580F0A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 60622F5A1E67F4D200580F0A /* Localizable.strings */; };
+		60622F651E67F64F00580F0A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 60622F671E67F64F00580F0A /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,7 +40,8 @@
 		60622F521E67F4B400580F0A /* DJKInAppPurchaseImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DJKInAppPurchaseImpl.m; sourceTree = "<group>"; };
 		60622F531E67F4B400580F0A /* DJKKeychainManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DJKKeychainManager.h; sourceTree = "<group>"; };
 		60622F541E67F4B400580F0A /* DJKKeychainManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DJKKeychainManager.m; sourceTree = "<group>"; };
-		60622F5A1E67F4D200580F0A /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		60622F661E67F64F00580F0A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		60622F681E67F65B00580F0A /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,7 +91,7 @@
 				60622F541E67F4B400580F0A /* DJKKeychainManager.m */,
 				60622F391E67F2D300580F0A /* DJKInAppPurchase.h */,
 				60622F3A1E67F2D300580F0A /* Info.plist */,
-				60622F5A1E67F4D200580F0A /* Localizable.strings */,
+				60622F671E67F64F00580F0A /* Localizable.strings */,
 			);
 			path = DJKInAppPurchase;
 			sourceTree = "<group>";
@@ -181,6 +182,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				ja,
 			);
 			mainGroup = 60622F2C1E67F2D300580F0A;
 			productRefGroup = 60622F371E67F2D300580F0A /* Products */;
@@ -199,7 +201,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				60622F551E67F4B400580F0A /* DJKInAppPurchase.storyboard in Resources */,
-				60622F5B1E67F4D200580F0A /* Localizable.strings in Resources */,
+				60622F651E67F64F00580F0A /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -240,11 +242,24 @@
 		};
 /* End PBXTargetDependency section */
 
+/* Begin PBXVariantGroup section */
+		60622F671E67F64F00580F0A /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				60622F661E67F64F00580F0A /* en */,
+				60622F681E67F65B00580F0A /* ja */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
 		60622F481E67F2D300580F0A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -296,6 +311,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
