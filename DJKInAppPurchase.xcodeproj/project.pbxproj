@@ -10,6 +10,12 @@
 		60622F401E67F2D300580F0A /* DJKInAppPurchase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60622F361E67F2D300580F0A /* DJKInAppPurchase.framework */; };
 		60622F451E67F2D300580F0A /* DJKInAppPurchaseTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 60622F441E67F2D300580F0A /* DJKInAppPurchaseTests.m */; };
 		60622F471E67F2D300580F0A /* DJKInAppPurchase.h in Headers */ = {isa = PBXBuildFile; fileRef = 60622F391E67F2D300580F0A /* DJKInAppPurchase.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		60622F551E67F4B400580F0A /* DJKInAppPurchase.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60622F501E67F4B400580F0A /* DJKInAppPurchase.storyboard */; };
+		60622F561E67F4B400580F0A /* DJKInAppPurchaseImpl.h in Headers */ = {isa = PBXBuildFile; fileRef = 60622F511E67F4B400580F0A /* DJKInAppPurchaseImpl.h */; };
+		60622F571E67F4B400580F0A /* DJKInAppPurchaseImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 60622F521E67F4B400580F0A /* DJKInAppPurchaseImpl.m */; };
+		60622F581E67F4B400580F0A /* DJKKeychainManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 60622F531E67F4B400580F0A /* DJKKeychainManager.h */; };
+		60622F591E67F4B400580F0A /* DJKKeychainManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 60622F541E67F4B400580F0A /* DJKKeychainManager.m */; };
+		60622F5B1E67F4D200580F0A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 60622F5A1E67F4D200580F0A /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +35,12 @@
 		60622F3F1E67F2D300580F0A /* DJKInAppPurchaseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DJKInAppPurchaseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		60622F441E67F2D300580F0A /* DJKInAppPurchaseTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DJKInAppPurchaseTests.m; sourceTree = "<group>"; };
 		60622F461E67F2D300580F0A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		60622F501E67F4B400580F0A /* DJKInAppPurchase.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DJKInAppPurchase.storyboard; sourceTree = "<group>"; };
+		60622F511E67F4B400580F0A /* DJKInAppPurchaseImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DJKInAppPurchaseImpl.h; sourceTree = "<group>"; };
+		60622F521E67F4B400580F0A /* DJKInAppPurchaseImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DJKInAppPurchaseImpl.m; sourceTree = "<group>"; };
+		60622F531E67F4B400580F0A /* DJKKeychainManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DJKKeychainManager.h; sourceTree = "<group>"; };
+		60622F541E67F4B400580F0A /* DJKKeychainManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DJKKeychainManager.m; sourceTree = "<group>"; };
+		60622F5A1E67F4D200580F0A /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,8 +83,14 @@
 		60622F381E67F2D300580F0A /* DJKInAppPurchase */ = {
 			isa = PBXGroup;
 			children = (
+				60622F501E67F4B400580F0A /* DJKInAppPurchase.storyboard */,
+				60622F511E67F4B400580F0A /* DJKInAppPurchaseImpl.h */,
+				60622F521E67F4B400580F0A /* DJKInAppPurchaseImpl.m */,
+				60622F531E67F4B400580F0A /* DJKKeychainManager.h */,
+				60622F541E67F4B400580F0A /* DJKKeychainManager.m */,
 				60622F391E67F2D300580F0A /* DJKInAppPurchase.h */,
 				60622F3A1E67F2D300580F0A /* Info.plist */,
+				60622F5A1E67F4D200580F0A /* Localizable.strings */,
 			);
 			path = DJKInAppPurchase;
 			sourceTree = "<group>";
@@ -93,7 +111,9 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				60622F561E67F4B400580F0A /* DJKInAppPurchaseImpl.h in Headers */,
 				60622F471E67F2D300580F0A /* DJKInAppPurchase.h in Headers */,
+				60622F581E67F4B400580F0A /* DJKKeychainManager.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -178,6 +198,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				60622F551E67F4B400580F0A /* DJKInAppPurchase.storyboard in Resources */,
+				60622F5B1E67F4D200580F0A /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -195,6 +217,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				60622F571E67F4B400580F0A /* DJKInAppPurchaseImpl.m in Sources */,
+				60622F591E67F4B400580F0A /* DJKKeychainManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -386,6 +410,7 @@
 				60622F4C1E67F2D300580F0A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		60622F4D1E67F2D300580F0A /* Build configuration list for PBXNativeTarget "DJKInAppPurchaseTests" */ = {
 			isa = XCConfigurationList;
@@ -394,6 +419,7 @@
 				60622F4F1E67F2D300580F0A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
