@@ -2,6 +2,13 @@
   Localizable.strings
   DJKInAppPurchase
 
-  Created by WataruSuzuki on 2017/03/02.
+  Created by WataruSuzuki on 2017/01/18.
   Copyright © 2017年 WataruSuzuki. All rights reserved.
 */
+error = "エラー";
+cannot_pay = "支払いができませんでした";
+fail_validation = "有効化できませんでした";
+not_available = "こちらはまだ利用できません";
+restrict_in_app_purchase = "無効なアイテムです";
+comp_restore = "リストアしました";
+cannot_find_pay_history = "購入履歴が見つかりませんでした";
