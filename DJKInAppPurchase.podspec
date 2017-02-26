@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "DJKInAppPurchase"
-  s.version      = "0.0.5"
+  s.version      = "0.0.6"
   s.summary      = "A short description of DJKInAppPurchase."
 
   s.description  = <<-DESC
@@ -65,7 +65,7 @@ Pod::Spec.new do |s|
   #  the deployment target. You can optionally include the target after the platform.
   #
 
-  s.platform     = :ios, "7.0"
+  s.platform     = :ios, "8.0"
   # s.platform     = :ios, "5.0"
 
   #  When using multiple platforms
@@ -90,7 +90,7 @@ Pod::Spec.new do |s|
   #  Not including the public_header_files will make all headers public.
   #
 
-  s.source_files  = "*.{h,m}"
+  # s.source_files  = "*.{h,m}"
   #s.exclude_files = "Classes/Exclude"
 
   # s.public_header_files = "Classes/**/*.h"
@@ -104,7 +104,7 @@ Pod::Spec.new do |s|
   #  non-essential files like tests, examples and documentation.
   #
 
-  s.resource  = "InterfaceBuilder/*.storyboard"
+  # s.resource  = "InterfaceBuilder/*.storyboard"
   # s.resources = "Resources/*.png"
 
   # s.preserve_paths = "FilesToSave", "MoreFilesToSave"
@@ -116,7 +116,7 @@ Pod::Spec.new do |s|
   #  the lib prefix of their name.
   #
 
-  # s.framework  = "SomeFramework"
+  s.framework  = "DJKInAppPurchase"
   # s.frameworks = "SomeFramework", "AnotherFramework"
 
   # s.library   = "iconv"
